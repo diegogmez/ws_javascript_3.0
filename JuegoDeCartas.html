@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Juego memoria</title>
+    <style>
+        table{box-sizing:border-box;border-collapse:collapse;margin:100px auto}
+        table td{border:1px solid black;height:150px;width:150px;text-align:center}
+        img{height:100px;display:none}
+        h1{font-family: cursive; color: rebeccapurple; text-align: center; margin-top: 50px;
+           }
+        div#result{
+            text-align: center;
+        }
+    </style>
+    <script>
+        var conta = 0;
+        var comparar;
+        var imagen;
+        var intentos = 0;
+        window.onload=function(){
+             document.querySelectorAll("table td").forEach(function(elemento){
+             elemento.onclick=mostrarImagen;
+             asignarImagenes()
+        });
+        }
+        function mostrarImagen(event){
+            contador()
+            imagen = event.currentTarget.firstChild
+            console.log (imagen)
+            
+            //Si es impar, ejecutara una vuelta y se cambiará 
+            if ((conta/2 - parseInt(conta/2)) != 0){
+                imagen.style.display="inline-block";
+                comparar = imagen;               
+            }
+            
+            //Si es impar, ejecutara una vuelta y se cambiará
+            else {
+                if (imagen.src == comparar.src && imagen.alt != comparar.alt){
+                imagen.style.display="inline-block";
+                intentosreales = conta/2
+                document.querySelector("div#result").innerHTML= "Te ha costado resolverlo " + intentosreales + " veces";
+                }
+                else {
+                imagen.style.display="inline-block";
+                setTimeout(styles,300)
+                }  
+            }
+        }
+        function contador(){
+            conta += 1;
+        }
+        function styles(){
+            imagen.style.display="none";
+            comparar.style.display="none";
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>JUEGO DE LAS CARTAS</h1>
+    
+    <div id="result">
+
+    </div>
+    <table>
+        <tbody>
+            <tr>
+                <td><img src="http://www.mundodeportivo.com/r/GODO/MD/p4/MasQueDeporte/Imagenes/2017/05/06/Recortada/img_edmartinez_20170506-140727_imagenes_md_otras_fuentes_no_archivables_obeso_01-kEOI-U422329062794bIE-980x554@MundoDeportivo-Web.jpg"      alt="Obeso1"></td>
+                <td><img src="http://cdn5.dibujos.net/dibujos/pintados/201246/perro-pigmento-dibus-pintado-por-caliz-9781931.jpg"      alt="Perro1"></td>
+                <td><img src="https://publicdomainvectors.org/photos/playbuttonclear.png"       alt="Play1"></td>
+                <td><img src="https://n6-img-fp.akamaized.net/iconos-gratis/boton-de-pausa-esquema_318-40569.jpg?size=338&ext=jpg"      alt="Pause2"></td>
+            </tr>
+            <tr>
+                <td><img src="http://www.mundodeportivo.com/r/GODO/MD/p4/MasQueDeporte/Imagenes/2017/05/06/Recortada/img_edmartinez_20170506-140727_imagenes_md_otras_fuentes_no_archivables_obeso_01-kEOI-U422329062794bIE-980x554@MundoDeportivo-Web.jpg"      alt="Obeso2"></td>
+                <td><img src="https://n6-img-fp.akamaized.net/iconos-gratis/boton-de-pausa-esquema_318-40569.jpg?size=338&ext=jpg"      alt="Pause1"></td>
+                <td><img src="http://dibujosdegatos.com/wp-content/uploads/2016/12/dibujos-de-gatos-peque%C3%B1os.jpg"       alt="Gato1"> </td>
+                <td><img src="http://cdn5.dibujos.net/dibujos/pintados/201246/perro-pigmento-dibus-pintado-por-caliz-9781931.jpg"      alt="Perro2"></td>
+            <tr>
+                <td><img src="http://dibujosdegatos.com/wp-content/uploads/2016/12/dibujos-de-gatos-peque%C3%B1os.jpg"       alt="Gato2"></td>
+                <td><img src="https://publicdomainvectors.org/photos/playbuttonclear.png"       alt="Play2"></td>
+                <td><img src="http://cdn5.dibujos.net/dibujos/pintados/201649/casa-de-campo-con-balcones-edificios-casas-10876017.jpg"       alt="Casa2"></td>
+                <td><img src="https://i.pinimg.com/736x/85/73/9c/85739c3babf3a94e6aa10ee12bf72412--horse-facts-ap-spanish.jpg"    alt="Quijote1"></td>
+            </tr>
+            <tr>
+                <td><img src="http://cdn5.dibujos.net/dibujos/pintados/201649/casa-de-campo-con-balcones-edificios-casas-10876017.jpg"       alt="Casa1"></td>
+                <td><img src="http://premier.emprendedores-en-red.com/wp-content/uploads/2013/06/ni%C3%B1o-desnutrido.jpg" alt="Desnutrido1"></td>
+                <td><img src="https://i.pinimg.com/736x/85/73/9c/85739c3babf3a94e6aa10ee12bf72412--horse-facts-ap-spanish.jpg"    alt="Quijote2"></td>
+                <td><img src="http://premier.emprendedores-en-red.com/wp-content/uploads/2013/06/ni%C3%B1o-desnutrido.jpg" alt="Desnutrido2"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>   
